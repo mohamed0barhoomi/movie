@@ -1,0 +1,40 @@
+import React ,{useState,useRef}from 'react'
+import './film.css'
+
+
+
+
+const Navb = ({searshref, searsh, note, changeNote}) => {
+    
+  return (
+    <nav className='navb'>
+      <div className="first">
+        <a href="#App">Netflix</a>
+        <a href="#App">Home</a>
+        <button className='favorite'><img src="favor.png" alt="" /></button>
+      </div>
+      <div className="search">
+        <span style={{color:"white"}}>rating :</span>
+       <select value={note} onChange={changeNote}>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <img className='icon' src="star.png" alt="" />
+        <input 
+        type="text" 
+        placeholder='Search'
+        ref={searshref} 
+        onChange={searsh}
+        />
+        <button onClick={()=>{searsh()}}>Search</button>
+      </div>
+      
+      
+    </nav>
+  )
+}
+
+export default Navb

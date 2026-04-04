@@ -4,17 +4,19 @@ import './film.css'
 
 
 
-const Navb = ({searshref, searsh, note, changeNote}) => {
+const Navb = ({searshref, searsh, note, changeNote,setfa}) => {
     
   return (
     <nav className='navb'>
       <div className="first">
         <a href="#App">Netflix</a>
         <a href="#App">Home</a>
-        <button className='favorite'><img src="favor.png" alt="" /></button>
+        <button className='favorite' onClick={() => {setfa()}}>
+          <img src="favor.png" alt="" />
+        </button>
       </div>
       <div className="search">
-        <span style={{color:"white"}}>rating :</span>
+        <span style={{color:"white"}}>Rating :</span>
        <select value={note} onChange={changeNote}>
         <option value="1">1</option>
         <option value="2">2</option>

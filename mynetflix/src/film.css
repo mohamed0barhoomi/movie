@@ -36,7 +36,7 @@ button{
 }
 .funct{
     display: flex;
-    gap: 120px;
+    gap: 60px;
     font-size: 1.1em;
 }
 .photo{
@@ -88,8 +88,8 @@ button{
     opacity: 0.9;
 }
 .navb{
-    position: fixed;
-    top: 0 ;
+    /* position: fixed;
+    top: 0 ; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -120,4 +120,56 @@ a{
     display: flex;
     align-items: space-evenly;
     gap: 10px;
+}
+
+     
+
+
+.add_film:hover{
+    transform: scale(1.2);
+    transition: 0.4s;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    border: 2px solid black;
+    border-radius:50px ;
+    /* opacity: 0; */
+    font-size: 1.1em;
+    color: rgb(100, 36, 36);
+
+}
+.up-film{
+    transform: scale(1.2);
+    transition: 0.4s;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    border: 2px solid black;
+    border-radius:50px ;
+    /* opacity: 0; */
+    font-size: 1.1em;
+    color: rgb(100, 36, 36);
+}
+.second{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3px;
+    
+
+}
+.baner_fav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+    background-color: rgba(93, 72, 72, 0.5);
+    width: 700px;
+}
+h5{
+    margin:3px;
+
 }

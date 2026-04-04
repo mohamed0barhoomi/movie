@@ -2,10 +2,10 @@ import React from 'react'
 import Data from './Data'
 import Film from './Film'
 
-const List_film = () => {
+const List_film = ({ add_favorite }) => {
   return (
-    <div style={{display:"grid", gridTemplateColumns:"repeat(4, 1fr)", gap:"20px"}}>
-      {Data.map(film => <Film film={film}/>)}
+    <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
+      {Data.map(film => <Film key={film.id} film={film} add_favorite={add_favorite} />)}
     </div>
   )
 }

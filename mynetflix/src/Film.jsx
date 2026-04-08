@@ -1,6 +1,8 @@
 import React,{useRef, useState} from 'react'
 import './film.css'
 import Data from './Data';
+import { Link } from 'react-router-dom';
+import Trailer from './Trailer';
 
 const Film = ({film, add_favorite}) => {
     const dialogId = `history-${film.titre}`;
@@ -40,9 +42,8 @@ const Film = ({film, add_favorite}) => {
         <div className="funct">
           <button onClick={()=>{setStat(2)}}>history</button>
           <button onClick={()=>{setStat(3)}}>update</button>
-          <button className='add' onClick={() => {
-            add_favorite(film.id);
-          }}>add -<img className='icon' src="love.png" alt="" /></button>
+          
+          <button><Link to={`/trailer/${film.id}`}> Trailer</Link></button>
         </div>
         
     </div>

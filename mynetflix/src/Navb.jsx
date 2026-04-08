@@ -1,5 +1,7 @@
 import React ,{useState,useRef}from 'react'
 import './film.css'
+import etoile from "./star.png"
+import heart from "./love.png"
 
 
 
@@ -12,7 +14,7 @@ const Navb = ({searshref, searsh, note, changeNote,setfa}) => {
         <a href="#App">Netflix</a>
         <a href="#App">Home</a>
         <button className='favorite' onClick={() => {setfa()}}>
-          <img src="favor.png" alt="" />
+          <img src={heart} alt="" />
         </button>
       </div>
       <div className="search">
@@ -24,7 +26,7 @@ const Navb = ({searshref, searsh, note, changeNote,setfa}) => {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <img className='icon' src="star.png" alt="" />
+      <img className='icon' src={etoile} alt="" />
         <input 
         type="text" 
         placeholder='Search'

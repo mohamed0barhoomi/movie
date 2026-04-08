@@ -36,7 +36,7 @@ button{
 }
 .funct{
     display: flex;
-    gap: 60px;
+    gap: 12px;
     font-size: 1.1em;
 }
 .photo{
@@ -172,4 +172,17 @@ a{
 h5{
     margin:3px;
 
+}
+.Trailler{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    border: 2px solid rgba(242, 7, 7, 0.7);
+    border-radius: 14px;
+    /* width: 800px; */
+    /* position: relative;
+    left:25%; */
 }

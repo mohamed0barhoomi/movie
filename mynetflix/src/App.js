@@ -7,6 +7,8 @@ import Data from './Data';
 import Film from './Film';
 import { useRef } from 'react';
 import "./film.css"
+import { Route, Routes } from 'react-router-dom';
+import Trailer from './Trailer';
 
 function App() {
 const searshref=useRef()
@@ -49,6 +51,8 @@ const add_favorite=(id)=>{
   return favorite ?(
     <div id='App'>
       <Navb searshref={searshref} searsh={searsh} note={note} changeNote={changeNote} setfa={setfa} />
+      <Routes>
+        <Route path="/" element={<>
         {(film &&(note > 1 || titre.length > 0)) && film.map(f => <Film key={f.id} film={f} add_favorite={add_favorite} />)}
         {(!film ||(note ===1 && titre.length == 0)) && <List_film add_favorite={add_favorite} />}
       <dialog id="add_film" className='add_film'>
@@ -62,10 +66,10 @@ const add_favorite=(id)=>{
             document.getElementById('add_film').close()
             addFilm()
             setAdd(!add)
-          
-            
           }}>Submit</button>
-
+          <button onClick={() => {
+            document.getElementById('add_film').close()
+          }}>cancel</button>
       </dialog>
       
       <button onClick={() => {
@@ -73,11 +77,16 @@ const add_favorite=(id)=>{
         dialog.showModal();
         
       }}>add new movie<br/></button>
+        </>} />
+        <Route path="/trailer/:id" element={<Trailer add_favorite={add_favorite} />} />
+      </Routes>
     </div>
   ):(
     <div className='second'>
       <div id='App'>
       <Navb searshref={searshref} searsh={searsh} note={note} changeNote={changeNote} setfa={setfa} />
+      <Routes>
+        <Route path="/" element={<>
       {(film &&(note > 1 || titre.length > 0)) && film.map(f => <Film key={f.id} film={f} add_favorite={add_favorite} />)}
       {(!film ||(note ===1 && titre.length == 0)) && <List_film add_favorite={add_favorite} />}
       <dialog id="add_film" className='add_film'>
@@ -102,6 +111,9 @@ const add_favorite=(id)=>{
         dialog.showModal();
         
       }}>add new movie<br/></button>
+        </>} />
+        <Route path="/trailer/:id" element={<Trailer add_favorite={add_favorite} />} />
+      </Routes>
     </div>
 
     <div className='baner_fav'>
@@ -118,6 +130,8 @@ const add_favorite=(id)=>{
       </ul>
     </div>
     </div>
+
+    
 
   );
 }
